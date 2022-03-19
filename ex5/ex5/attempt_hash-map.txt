@@ -1,0 +1,18 @@
+aici am incercat sa scot dublurile fara sa fac alt vector
+        am incercat sa folosesc hashmap ca sa retin de cate ori apare un numar, dar mi se pare ca m-am complicat
+        println!("{:?}",args);
+        let mut dubloons = HashMap::new();
+        for i in 0..args.len()-3 {
+            if args[i] == args[i+1] {
+                // match dubloons.get(&args[i]){
+                //     Some(&r) => dubloons.insert(args[i],dubloons.get(&args[i])+1),
+                //     None => dubloons.insert(args[i], 1),
+                // }; 
+                let count = dubloons.entry(args[i]).or_insert(0);
+                *count += 1;
+            }
+        }
+        //pair key-value, where key is the number and value is the number of those numbers (that have to be removed)
+        for i in 0..args.len(){
+            args.remove(v[i]); //vector changes as I remove them
+        }
